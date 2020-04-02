@@ -1,6 +1,8 @@
 '''
+
 Create on Sun Apr 31 19:00 2020
 @author : Rivas Frits Sasia
+
 '''
 
 #Import Module
@@ -33,8 +35,8 @@ print "    " + WHITE + " |  |     |  |  |  |   \      / |______| |  \__, |    | 
 print "    " + WHITE + " |  `----.|  `--'  |    \    /         | |    / /     |  | |  |\   | |  '--'  | "
 print "    " + WHITE + "  \______| \______/      \__/          |_|   /_/      |__| |__| \__| |_______/  "
 print "    " + GREEN + "                              TRACKING COVID-19                                 "
-print "    " + RED +   "                             REGION  : "+ WHITE +" INDONESIA                     " 
-print "    " + GREEN + "                            Creator  : Frits Sasia                             "                                                                              
+print "    " + RED +   "                            Country  : "+ WHITE +" Indonesia                     " 
+print "    " + GREEN + "                           Author    : Frits Sasia                             "                                                                              
 
 api = "https://coronavirus-19-api.herokuapp.com/countries/Indonesia" # API public
 link_json = urllib.urlopen(api) # Mengakses API
@@ -61,10 +63,10 @@ print ""
 
 # Fetching dan menampilkan data dari JSON
 print BLUE+"Negara"+GREEN+"\t\t\t\t: %s" % data['country']
-print BLUE+"Kasus Hari Ini"+YELLOW+"\t\t\t: %s" % data['todayCases']
-print BLUE+"Kematian Hari Ini"+RED+"\t\t: %s" % data['todayDeaths']
-print BLUE+"Sembuh\t\t\t\t"+GREEN+": %s" % data['recovered']
-print BLUE+"Total Kasus\t\t\t"+YELLOW+": %s" % data['cases']
-print BLUE+"Total Kematian\t\t\t:"+RED+" %s" % data['deaths']
+print BLUE+"Kasus Hari Ini"+YELLOW+"\t\t\t: %s" % data['todayCases'] + str(' Orang')
+print BLUE+"Kematian Hari Ini"+RED+"\t\t: %s" % data['todayDeaths'] + str(' Orang')
+print BLUE+"Sembuh\t\t\t\t"+GREEN+": %s" % data['recovered'] + str(' Orang')
+print BLUE+"Total Kasus\t\t\t"+YELLOW+": %s" % data['cases'] + str(' Orang')
+print BLUE+"Total Kematian\t\t\t:"+RED+" %s" % data['deaths'] + str(' Orang')
 print ""
 print GREEN+"Jangan panik, stay safe"+RED+" #TetapDi"+WHITE+"rumahAja "+GREEN+"dan jaga kesehatan kamu yaa :)"
