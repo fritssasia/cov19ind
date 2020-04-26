@@ -8,7 +8,7 @@ Create on Sun Apr 31 19:00 2020
 #Import Module
 from colorama import Fore, Back, Style
 from datetime import datetime
-from os import system, name 
+from os import system, name
 import urllib
 import json
 
@@ -23,20 +23,20 @@ BLUE = Fore.BLUE
 
 #Detect OS and Clear Terminal
 if name == 'posix':
-    _ = system('clear') 
+    _ = system('clear')
 elif name == 'nt':
-    _ = system('cls') 
-    
+    _ = system('cls')
+
 #Header
-print "    " + RED +   "  ______   ______     ____    ____      __    ___       __  .__   __.  _______  "  
+print "    " + RED +   "  ______   ______     ____    ____      __    ___       __  .__   __.  _______  "
 print "    " + RED +   " /       | /  __  \  \   \  /   /     /_ |  / _ \     |  | |  \ |  | |       \  "
 print "    " + RED +   " |  ,----'|  |  |  |  \   \/   / ______| | | (_) |    |  | |   \|  | |  .--.  | "
 print "    " + WHITE + " |  |     |  |  |  |   \      / |______| |  \__, |    |  | |  . `  | |  |  |  | "
 print "    " + WHITE + " |  `----.|  `--'  |    \    /         | |    / /     |  | |  |\   | |  '--'  | "
 print "    " + WHITE + "  \______| \______/      \__/          |_|   /_/      |__| |__| \__| |_______/  "
 print "    " + GREEN + "                              TRACKING COVID-19                                 "
-print "    " + RED +   "                            Country  : "+ WHITE +" Indonesia                     " 
-print "    " + GREEN + "                           Author    : Frits Sasia                             "                                                                              
+print "    " + RED +   "                            Country  : "+ WHITE +" Indonesia                     "
+print "    " + GREEN + "                           Author    : Frits Sasia                             "
 
 api = "https://coronavirus-19-api.herokuapp.com/countries/Indonesia" # API public
 link_json = urllib.urlopen(api) # Mengakses API
@@ -62,11 +62,11 @@ print GREEN+"Tanggal & Waktu {}-{}-{}  {}:{}:{}".format(day, mounth, year, hour,
 print ""
 
 # Fetching dan menampilkan data dari JSON
-print BLUE+"Negara"+GREEN+"\t\t\t\t: %s" % data['country']
-print BLUE+"Kasus Hari Ini"+YELLOW+"\t\t\t: %s" % data['todayCases'] + str(' Orang')
-print BLUE+"Kematian Hari Ini"+RED+"\t\t: %s" % data['todayDeaths'] + str(' Orang')
-print BLUE+"Sembuh\t\t\t\t"+GREEN+": %s" % data['recovered'] + str(' Orang')
-print BLUE+"Total Kasus\t\t\t"+YELLOW+": %s" % data['cases'] + str(' Orang')
-print BLUE+"Total Kematian\t\t\t:"+RED+" %s" % data['deaths'] + str(' Orang')
+print GREEN+"Negara\t\t\t\t: %s" % data['country']
+print YELLOW+"Kasus Hari Ini\t\t\t: %s" % data['todayCases'] + str(' Orang')
+print RED+"Kematian Hari Ini\t\t: %s" % data['todayDeaths'] + str(' Orang')
+print GREEN+"Sembuh\t\t\t\t: %s" % data['recovered'] + str(' Orang')
+print YELLOW+"Total Kasus\t\t\t: %s" % data['cases'] + str(' Orang')
+print RED+"Total Kematian\t\t\t: %s" % data['deaths'] + str(' Orang')
 print ""
 print GREEN+"Jangan panik, stay safe"+RED+" #TetapDi"+WHITE+"rumahAja "+GREEN+"dan jaga kesehatan kamu yaa :)"
